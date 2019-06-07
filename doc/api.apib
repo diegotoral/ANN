@@ -1,0 +1,106 @@
+FORMAT: 1A
+
+# ANN API v1.0
+
+Ann has a simple API allowing consumers (in this case a front-end application)
+to access notes, notebooks and tags.
+
+# Group Notebook
+
+## Notebook Collection [/notebooks]
+
+### List All Notebooks [GET]
+
++ Response 200 (application/json)
+
+    + Attributes (Notebook)
+
+### Create a New Notebook [POST]
+
++ Request  (application/json)
+
+    {
+      "name": "React"
+    }
+
++ Response 201 (application/json)
+
+    {
+      "id": "1",
+      "name": "React"
+    }
+
+
+## Notebook [/notebooks/{id}]
+
++ Parameters
+  + id (number) - ID of the Notebook in the form of an integer
+
+### View a Notebook Detail [GET]
+
++ Response 200 (application/json)
+
+    {
+      "id": "2",
+      "name": "Ruby",
+      "created_at": "2014-11-11T08:40:51.620Z",
+      "updated_at": "2014-11-11T08:40:51.620Z"
+    }
+
+
+### Delete a Notebook [DELETE]
+
++ Response 204
+
+
+## Data Structures
+
+### User
+The owner of all notes
+
+#### Properties
+
+- id: 123 (number)
+- full_name: John Snow (required)
+- email: `john@know-nothing.com` (required)
+
+
+### Note
+A note taken by the user
+
+#### Properties
+
+- id: 76 (number)
+- title: How to train your dragon (required)
+- author (User, required)
+- notebook (Notebook, required)
+
+
+### RichText
+The content/body of a note.
+
+#### Properties
+
+- id: 99 (number)
+- note (Note, required)
+- body (required)
+
+
+### Notebook
+A simple way to keep notes organized
+
+#### Properties
+
+- id: 432 (number)
+- name: Recipes (required)
+- created_at: `2014-11-11T08:40:51.620Z` (required)
+- updated_at: `2014-11-11T08:40:51.620Z` (required)
+
+
+### Tag
+A mark for notes.
+
+#### Properties
+
+- id: 98963 (number)
+- name: Ruby (required)

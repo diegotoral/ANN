@@ -1,0 +1,43 @@
+# User
+The owner of all notes
+
+## Properties
+
+- full_name (string)
+- email (string)
+- password_digest (string)
+
+
+# Note
+A note taken by the user
+
+## Properties
+
+- title (string)
+- author (User)
+- notebook (Notebook)
+
+
+# RichText
+The content/body of a note.
+
+## Properties
+
+- note (Note)
+- body (string)
+
+
+# Notebook
+A simple way to keep notes organized
+
+## Properties
+
+- name (string)
+
+
+# Tag
+A mark for notes.
+
+## Properties
+
+- name (string)
