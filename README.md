@@ -1,24 +1,49 @@
-# README
+<div align="center">
+  <img alt="ANN" src="https://static-ann.s3-us-west-2.amazonaws.com/logo.svg" width="300px">
+</div>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p align="center">
+  <a href="https://www.ruby-lang.orf/en/">
+    <img src="https://img.shields.io/badge/Ruby-2.5.1-green.svg" alt="ruby version">
+  </a>
+  <a href="http://rubyonrails.org/">
+    <img src="https://img.shields.io/badge/Rails-v5.2.3-brightgreen.svg" alt="rails version">
+  </a>
+  <a href="https://vuejs.org">
+    <img src="https://img.shields.io/badge/Vue.js-2.6.10-green.svg" alt="vuejs version">
+  </a>
+  <a href="https://tailwindcss.com">
+    <img src="https://img.shields.io/badge/Tailwindcss-1.0.3-green.svg" alt="tailwindcss version">
+  </a>
+</p>
 
-Things you may want to cover:
+**ANN** is a super simple and clean notes app. It aims to be a replacement to other notes taking apps but keep a very clean set of features. **ANN** will eventually support Markdown.
 
-* Ruby version
+**ANN** is built with a mix of [Rails 5](https://rubyonrails.org), [Tailwindcss](https://tailwindcss.com), and [Vue.js](http://vuejs.org).
 
-* System dependencies
+## Getting Started
 
-* Configuration
+### Prerequisites
 
-* Database creation
+- [Ruby](https://www.ruby-lang.org/en/) - we recommend using [rmv](http://rvm.io)
+- [Yarn](https://yarnpkg.com/)
+- [PostgreSQL](https://www.postgresql.org/) 9.4 or higher
 
-* Database initialization
+### Standard Installation
 
-* How to run the test suite
+1. Make sure all the prerequisites are installed
+2. Fork or clone this repository
+3. Run `bin/setup`
+4. That's it! Start the application and head to `http://localhost:3000`
 
-* Services (job queues, cache servers, search engines, etc.)
+### Hybrid Docker Installation
 
-* Deployment instructions
+1. Install `docker` and `docker-compose`
+2. Fork or clone this repository
+3. Run `docker-compose up`
+4. Run `bin/setup`
+5. That's it! Start the application as you normaly do and head to `http://localhost:3000`
 
-* ...
+## License
+
+**ANN** is released uner the [MIT License](https://opensource.org/licenses/MIT).
