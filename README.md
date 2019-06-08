@@ -46,4 +46,4 @@
 
 ## License
 
-**ANN** is released uner the [MIT License](https://opensource.org/licenses/MIT).
+**ANN** is released under the [MIT License](https://opensource.org/licenses/MIT).
