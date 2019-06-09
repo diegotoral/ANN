@@ -1,5 +1,5 @@
-class WelcomeController < ApplicationController
+class WelcomeController < LandingController
   def index
-    render text: 'Hello'
+    @user = User.new
   end
 end

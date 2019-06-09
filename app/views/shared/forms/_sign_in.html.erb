@@ -1,0 +1,16 @@
+<%= ann_form_for user, id: 'new_session', url: user_session_path, class: 'form' do |f| %>
+  <div class="field">
+    <%= f.label :email, class: 'label' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: 'label' %>
+    <%= f.password_field :password, autocomplete: 'current-password', class: 'input' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Login', class: 'button is-blue' %>
+    <%= link_to 'Forgot Password?', '#', class: 'button is-link' %>
+  </div>
+<% end %>

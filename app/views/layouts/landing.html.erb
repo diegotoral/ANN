@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ANN</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body class="antialiased">
+    <div id="app" class="inline-flex w-screen">
+      <%= render 'shared/flashes' %>
+
+      <div id="particles-js" class="flex-auto bg-indigo-200 h-screen w-3/5">
+      </div>
+
+      <div class="flex-auto h-screen w-2/4 content-center">
+        <div class="w-2/3 m-auto mt-20">
+          <%= image_tag 'logo.svg', class: 'w-40 mx-auto pointer-events-none' %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<%= ann_form_for(user, as: :user, url: registration_path(:user), class: 'form') do |f| %>
+  <div class="field">
+    <%= f.label :email, class: 'label' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input' %>
+    <%= f.error_message :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: 'label' %>
+    <%= f.password_field :password, autocomplete: 'new-password', class: 'input' %>
+    <%= f.error_message :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, class: 'label' %>
+    <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'input' %>
+    <%= f.error_message :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Sign Up', class: 'button is-blue' %>
+    <%= link_to "I have an account", user_session_path, class: 'button is-link' %>
+  </div>
+<% end %>

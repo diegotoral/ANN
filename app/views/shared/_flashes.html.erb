@@ -1,0 +1,14 @@
+<% if flash.any? %>
+  <div class="fixed text-center w-full py-4">
+    <% flash.each do |key, value| %>
+      <div class="bg-indigo-800 w-64 p-2 items-center text-indigo-100 leading-none flex rounded-full">
+        <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">
+          <%= key %>
+        </span>
+        <span class="font-semibold mr-2 text-left flex-auto">
+          <%= value %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+<% end %>
