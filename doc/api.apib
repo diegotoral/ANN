@@ -13,22 +13,19 @@ to access notes, notebooks and tags.
 
 + Response 200 (application/json)
 
-    + Attributes (Notebook)
+    + Attributes (array[Notebook])
 
 ### Create a New Notebook [POST]
 
 + Request  (application/json)
 
-    {
-      "name": "React"
-    }
+        {
+          "name": "React"
+        }
 
 + Response 201 (application/json)
 
-    {
-      "id": "1",
-      "name": "React"
-    }
+    + Attributes (Notebook)
 
 
 ## Notebook [/notebooks/{id}]
@@ -40,17 +37,56 @@ to access notes, notebooks and tags.
 
 + Response 200 (application/json)
 
-    {
-      "id": "2",
-      "name": "Ruby",
-      "created_at": "2014-11-11T08:40:51.620Z",
-      "updated_at": "2014-11-11T08:40:51.620Z"
-    }
+    + Attributes (Notebook)
 
 
 ### Delete a Notebook [DELETE]
 
 + Response 204
+
+
+# Group Note
+
+## Note Collection [/notebooks/{notebook_id}/notes]
+
++ Parameters
+  + notebook_id (number) - ID of the Notebook in the form of an integer
+
+### List All Notes within a Notebook [GET]
+
++ Response 200 (application/json)
+
+    + Attributes (array[Note])
+
+
+### Create a New Note within the specified Notebook [POST]
+
++ Request  (application/json)
+
+        {
+            "title": "How to train dragons",
+            "body": "Super long string here"
+        }
+
+
++ Response 201 (application/json)
+
+    + Attributes (Note)
+
+
+
+## Note [/notebooks/{notebook_id}/notes/{id}]
+
++ Parameters
+    + notebook_id (number) - ID of the Notebook in the form of an integer
+    + id (number) - ID of the Note in the form of an integer
+
+### View a Note Detail [GET]
+
++ Response 200 (application/json)
+
+    + Attributes (Note)
+
 
 
 ## Data Structures
@@ -60,9 +96,8 @@ The owner of all notes
 
 #### Properties
 
-- id: 123 (number)
-- full_name: John Snow (required)
-- email: `john@know-nothing.com` (required)
+- full_name: Jon Snow (required)
+- email: `Jon@know-nothing.com` (required)
 
 
 ### Note
@@ -70,18 +105,17 @@ A note taken by the user
 
 #### Properties
 
-- id: 76 (number)
 - title: How to train your dragon (required)
+- body: A super long string (string)
 - author (User, required)
 - notebook (Notebook, required)
 
 
 ### RichText
-The content/body of a note.
+The content/body of a note
 
 #### Properties
 
-- id: 99 (number)
 - note (Note, required)
 - body (required)
 
@@ -91,7 +125,6 @@ A simple way to keep notes organized
 
 #### Properties
 
-- id: 432 (number)
 - name: Recipes (required)
 - created_at: `2014-11-11T08:40:51.620Z` (required)
 - updated_at: `2014-11-11T08:40:51.620Z` (required)
@@ -102,5 +135,4 @@ A mark for notes.
 
 #### Properties
 
-- id: 98963 (number)
-- name: Ruby (required)
+- name: ruby (string, required)
