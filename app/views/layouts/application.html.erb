@@ -12,13 +12,13 @@
     <div id="app" class="inline-flex flex-row items-streach h-screen w-screen">
       <%= render 'shared/flashes' %>
 
-      <div class="bg-gray-800 flex-initial text-white" style="width: 241px;">
+      <div class="bg-gray-100 flex-initial text-white" style="width: 241px;">
         <%= image_tag 'logo.svg', class: 'w-20 h-20 m-auto' %>
 
         <div class="flex items-center justify-center mt-8">
           <%= image_tag current_user.present.avatar, class: 'w-10 h-10 rounded-full mr-4' %>
           <div class="text-sm">
-            <p class="leaging-none"><%= current_user.email %></p>
+            <p class="text-gray-800 leaging-none"><%= current_user.email %></p>
             <%= link_to 'Log out', destroy_user_session_path, class: 'text-xs text-gray-600' %>
           </div>
         </div>
@@ -33,7 +33,7 @@
 
         <ul>
           <% 10.times do |n| %>
-            <li class="flex mb-3 px-4 hover:text-gray-500">
+            <li class="flex mb-3 px-4 text-gray-500 hover:text-gray-500">
               <a href="#" class="flex-auto relative block font-medium text-xs">
                 Notebook <%= n %>
               </a>
@@ -43,8 +43,8 @@
         </ul>
       </div>
 
-      <div class="bg-gray-100 flex-initial" style="width: 346px;">
-        notes
+      <div class="flex-initial border-r-2 border-gray-100" style="width: 346px;">
+        <h2 class="uppercase font-bold text-gray-800 pl-4">Notes</h2>
       </div>
 
       <div class="flex-initial">
