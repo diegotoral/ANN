@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  mail:
+    image: yappabe/mailcatcher
+    ports:
+      - 1080:1080
+      - 1025:102
