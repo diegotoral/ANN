@@ -15,6 +15,9 @@
   <a href="https://tailwindcss.com">
     <img src="https://img.shields.io/badge/Tailwindcss-1.0.3-green.svg" alt="tailwindcss version">
   </a>
+  <a href="https://travis-ci.com/diegotoral/ANN/">
+    <img src="https://travis-ci.com/diegotoral/ANN.svg?branch=master" alt="build:started">
+  </a>
 </p>
 
 **ANN** is a super simple and clean notes app. It aims to be a replacement to other notes taking apps but keep a very clean set of features. **ANN** will eventually support Markdown.

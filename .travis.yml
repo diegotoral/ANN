@@ -1,0 +1,16 @@
+dist: trusty
+sudo: false
+addons:
+  chrome: stable
+node_js: 10
+language: ruby
+cache:
+  - bundler
+  - yarn
+bundler_args: --without production
+rvm:
+  - 2.5.1
+install:
+  - yarn install
+  - bundle install
+
