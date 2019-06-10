@@ -5,6 +5,10 @@ class ApplicationPresenter < SimpleDelegator
     super
   end
 
+  def present
+    self
+  end
+
   protected
 
   alias_method :model, :__getobj__
