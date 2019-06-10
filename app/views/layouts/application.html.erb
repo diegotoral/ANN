@@ -9,9 +9,47 @@
   </head>
 
   <body class="antialiased">
-    <div id="app">
+    <div id="app" class="inline-flex flex-row items-streach h-screen w-screen">
       <%= render 'shared/flashes' %>
-      <%= yield %>
+
+      <div class="bg-gray-800 flex-initial text-white" style="width: 241px;">
+        <%= image_tag 'logo.svg', class: 'w-20 h-20 m-auto' %>
+
+        <div class="flex items-center justify-center mt-8">
+          <%= image_tag current_user.present.avatar, class: 'w-10 h-10 rounded-full mr-4' %>
+          <div class="text-sm">
+            <p class="leaging-none"><%= current_user.email %></p>
+            <%= link_to 'Log out', destroy_user_session_path, class: 'text-xs text-gray-600' %>
+          </div>
+        </div>
+
+        <div class="flex px-4 pt-8 mb-3">
+          <h1 class="flex-auto uppercase font-bold text-xs text-gray-500 tracking-wide">
+            Notebooks
+          </h1>
+
+          <%= image_tag 'icons/add-outline.svg', class: 'fill-current w-4 h-4' %>
+        </div>
+
+        <ul>
+          <% 10.times do |n| %>
+            <li class="flex mb-3 px-4 hover:text-gray-500">
+              <a href="#" class="flex-auto relative block font-medium text-xs">
+                Notebook <%= n %>
+              </a>
+              <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="bg-gray-100 flex-initial" style="width: 346px;">
+        notes
+      </div>
+
+      <div class="flex-initial">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
