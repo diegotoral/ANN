@@ -20,7 +20,7 @@ module Presentable
       presenter_constant = presenter_name.safe_constantize
 
       if presenter_constant.nil?
-        ApplicationPresenter
+        ::ApplicationPresenter
       else
         presenter_constant
       end
