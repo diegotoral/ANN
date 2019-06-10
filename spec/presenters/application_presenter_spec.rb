@@ -10,10 +10,10 @@ RSpec.describe ApplicationPresenter, type: :presenter do
   end
 
   it 'delegates any missing method to the model' do
-    model = double(:model, name: 'Jon Snow')
+    model = double(:model, full_name: 'Jon Snow')
     presenter = DummyPresenter.new model
 
-    expect(presenter.name).to eq('Jon Snow')
+    expect(presenter.full_name).to eq('Jon Snow')
   end
 
   it 'calls methods defined on the presenter itself' do
