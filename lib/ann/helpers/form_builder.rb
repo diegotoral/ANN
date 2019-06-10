@@ -13,7 +13,7 @@ module Ann
       def error_message(attribute, options = {})
         return if object.errors.empty?
 
-        @template.content_tag(:p, object.errors.full_messages_for(attribute).first, class: 'text-red-500')
+        @template.content_tag(:p, object.errors.full_messages_for(attribute).first, options)
       end
     end
   end
